@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Port Scanner</title>
+</head>
+<body>
+    <h1>Port Scanner</h1>
+    <form action="/scan" method="post">
+        <label>Target IP/Domain:</label><br>
+        <input type="text" name="target" required><br><br>
+
+        <label>Start Port:</label><br>
+        <input type="number" name="start_port" required><br><br>
+
+        <label>End Port:</label><br>
+        <input type="number" name="end_port" required><br><br>
+
+        <input type="submit" value="Scan">
+    </form>
+
+    {% if result %}
+        <hr>
+        {{ result | safe }}
+    {% endif %}
+</body>
+</html>
